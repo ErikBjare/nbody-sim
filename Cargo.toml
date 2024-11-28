@@ -1,0 +1,10 @@
+[package]
+name = "nbody-sim"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rayon = "1.8"        # For parallel processing
+rand = "0.8"        # For random initial positions
+minifb = "0.25"     # For GUI rendering
+glam = "0.24"       # For vector math
