@@ -1,5 +1,7 @@
 # N-Body Simulator in Rust
 
+[![built using gptme](https://img.shields.io/badge/built%20using-gptme%20%F0%9F%A4%96-5151f5?style=flat)](https://github.com/ErikBjare/gptme)
+
 A 4K-resolution N-body gravitational simulation built in Rust. This project was created as a modern take on the classic n-body simulations I used to write as programming exercises in the early 2010s.
 
 ## About
@@ -29,13 +31,32 @@ The simulation features:
 
 ## Building and Running
 
-Requires Rust and Cargo. Built with:
+### Requirements
+
+- Rust and Cargo
+- X11 development libraries (on Linux)
+  - On Ubuntu/Debian: `sudo apt install xorg-dev`
+  - On Arch Linux: `sudo pacman -S libx11`
+- A display capable of 4K resolution (3840x2160) or the code can be modified for lower resolutions
+
+### Building
 
 ```bash
+# Install dependencies (Ubuntu/Debian)
+sudo apt install xorg-dev
+
+# Build and run
 cargo run --release
 ```
 
-The release build is recommended for optimal performance.
+The release build is strongly recommended for optimal performance, as the simulation is computationally intensive.
+
+### Performance Notes
+
+The simulation is optimized for modern multi-core processors. It uses Rayon for parallel force calculations and can benefit significantly from:
+- Multiple CPU cores
+- Fast memory
+- Modern GPU for window management
 
 ## Technical Notes
 
@@ -53,6 +74,3 @@ Built rapidly using gptme, demonstrating how modern AI tools can help quickly pr
 ## License
 
 MIT
-
----
-Built with ❤️ using [gptme](https://github.com/ErikBjare/gptme)
